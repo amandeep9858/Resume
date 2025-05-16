@@ -5,19 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Amandeep Kaur – Professional Resume</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
+  <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+  <div class="sidebar-backdrop" onclick="toggleSidebar()"></div>
   <aside class="sidebar">
     <section class="profile-card">
       <img src="img/p1.jpg" alt="Amandeep Kaur">
       <h2>Amandeep Kaur</h2>
-      <p class="role">Security & IT Professional</p>
+      <p class="role">Business Data Analyst</p>
     </section>
     <section class="contact">
-      <h3>Contact</h3>
-      <p>📍 Weber St E, Kitchener, ON, CA</p>
-      <p>✉️ amandeepkaur.lpuo@gmail.com</p>
-      <p>📞 +1 (437) 566-9601</p>
+      <p><i class="fas fa-map-marker-alt"></i> Kitchener, ON, CA (Open to Relocate)</p>
+      <p><i class="fas fa-phone"></i> +1 (437) 566-9601</p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:amandeepkaur.lpuo@gmail.com">amandeepkaur.lpuo@gmail.com</a></p>
+      <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/amandeepkaur-lpuo/" target="_blank" rel="noopener">https://www.linkedin.com/in/amandeepkaur-lpuo/</a></p>
+      <p><i class="fab fa-github"></i> <a href="https://github.com/amandeep9858" target="_blank" rel="noopener">https://github.com/amandeep9858</a></p>
+    </section>
+    <section class="skills-section">
+      <h3>Skills</h3>
+      <div class="skill"><div class="title"><span>MS Office</span><span>100%</span></div><div class="bar"><div class="fill" style="width:100%"></div></div></div>
+      <div class="skill"><div class="title"><span>Access Control</span><span>95%</span></div><div class="bar"><div class="fill" style="width:95%"></div></div></div>
+      <div class="skill"><div class="title"><span>Surveillance</span><span>90%</span></div><div class="bar"><div class="fill" style="width:90%"></div></div></div>
+      <div class="skill"><div class="title"><span>Patrol Ops</span><span>85%</span></div><div class="bar"><div class="fill" style="width:85%"></div></div></div>
     </section>
     <section class="languages">
       <h3>Languages</h3>
@@ -28,13 +39,6 @@
         <div class="ring" style="--p:20;"><span>20%</span></div>
       </div>
       <div class="lang-labels"><div>Punjabi</div><div>Hindi</div><div>English</div><div>French</div></div>
-    </section>
-    <section class="skills-section">
-      <h3>Skills</h3>
-      <div class="skill"><div class="title"><span>MS Office</span><span>100%</span></div><div class="bar"><div class="fill" style="width:100%"></div></div></div>
-      <div class="skill"><div class="title"><span>Access Control</span><span>95%</span></div><div class="bar"><div class="fill" style="width:95%"></div></div></div>
-      <div class="skill"><div class="title"><span>Surveillance</span><span>90%</span></div><div class="bar"><div class="fill" style="width:90%"></div></div></div>
-      <div class="skill"><div class="title"><span>Patrol Ops</span><span>85%</span></div><div class="bar"><div class="fill" style="width:85%"></div></div></div>
     </section>
     <section class="tools-section">
       <h3>Tools</h3>
@@ -49,7 +53,6 @@
   <main>
     <section class="welcome">
       <h1>Welcome to My Professional Profile</h1>
-      <p>Motivated and detail-oriented IT professional with expertise in data analytics and security operations. Skilled in SQL, Power BI, Java, and cloud tools.</p>
     </section>
     <nav class="nav">
       <a href="#summary">Summary</a>
@@ -77,6 +80,12 @@
         <li>Other: Access Control Systems, Surveillance Tools, Incident Reporting</li>
       </ul>
     </section>
+    <section id="education" class="content">
+      <h2>Education</h2>
+      <div class="item"><h3>Post-Graduate Certificate, Reporting Systems & Database Dev, Conestoga College</h3><div class="date">Sep 2024 – Apr 2025</div></div>
+      <div class="item"><h3>Post-Graduate Certificate, Big Data Solution Architecture, Conestoga College</h3><div class="date">Sep 2023 – Apr 2024</div></div>
+      <div class="item"><h3>Bachelor of Computer Applications, Punjab University</h3><div class="date">Aug 2019 – Jul 2022</div></div>
+    </section>
     <section id="projects" class="content">
       <h2>Projects</h2>
       <ul>
@@ -103,12 +112,6 @@
           <li>Improved hiring metrics by collaborating with technical stakeholders.</li>
         </ul>
       </div>
-    </section>
-    <section id="education" class="content">
-      <h2>Education</h2>
-      <div class="item"><h3>Post-Graduate Certificate, Reporting Systems & Database Dev, Conestoga College</h3><div class="date">Sep 2024 – Apr 2025</div></div>
-      <div class="item"><h3>Post-Graduate Certificate, Big Data Solution Architecture, Conestoga College</h3><div class="date">Sep 2023 – Apr 2024</div></div>
-      <div class="item"><h3>Bachelor of Computer Applications, Punjab University</h3><div class="date">Aug 2019 – Jul 2022</div></div>
     </section>
     <section id="certifications" class="content">
       <h2>Certifications</h2>
@@ -155,5 +158,11 @@
       });
     });
   </script>
+  <script>
+    function toggleSidebar() {
+      document.querySelector('.sidebar').classList.toggle('open');
+      document.querySelector('.sidebar-backdrop').classList.toggle('open');
+    }
+    </script> 
 </body>
 </html>
