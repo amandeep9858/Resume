@@ -1,108 +1,269 @@
+/* =========================
+   Professional Palette
+   ========================= */
+:root {
+  --sidebar-bg: #f7f3f0;
+  --main-bg: #ffffff;
+  --text-dark: #2e2e2e;
+  --text-muted: #555555;
+  --accent: #b28e6b;
+  --border: #e2dacf;
+  --nav-bg: #ffffff;
+  --nav-active: #b28e6b;
+}
 
-    /* Professional Palette */
-    :root {
-      --sidebar-bg: #f7f3f0;
-      --main-bg: #ffffff;
-      --text-dark: #2e2e2e;
-      --text-muted: #555555;
-      --accent: #b28e6b;
-      --border: #e2dacf;
-      --nav-bg: #ffffff;
-      --nav-active: #b28e6b;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', sans-serif; background: var(--main-bg); color: var(--text-dark); }
-    a { color: var(--text-dark); text-decoration: none; }
-    
-    /* Layout */
-    .sidebar {
-      position: fixed; top: 0; left: 0; width: 300px; height: 100vh;
-      background: var(--sidebar-bg); padding: 30px 20px;
-      display: flex; flex-direction: column;
-      border-right: 1px solid var(--border);
-      overflow-y: auto;
-    }
-    main { margin-left: 300px; padding: 30px 40px; }
+/* =========================
+   Base Styles & Reset
+   ========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    /* Sidebar sections */
-    .sidebar section { padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px solid var(--border); }
-    .sidebar section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--main-bg);
+  color: var(--text-dark);
+}
 
-    .sidebar i {
-      color: var(--accent) !important;
-    }
+a {
+  color: var(--text-dark);
+  text-decoration: none;
+}
 
-    .sidebar-toggle {
-      display: none;
-    }
+p {
+  text-align: justify;
+}
 
-    .profile-card { text-align: center; }
-    .profile-card img { width: 100px; height: 100px; border-radius: 50%; border: 2px solid var(--accent); margin-bottom: 12px; }
-    .profile-card h2 { font-size: 1.4rem; margin-bottom: 4px; }
-    .profile-card p.role { font-size: 0.9rem; color: var(--text-muted); }
+/* =========================
+   Layout
+   ========================= */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+  background: var(--sidebar-bg);
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* IE/Edge */
+}
 
-    .contact h3, .languages h3, .skills-section h3, .tools-section h3 { font-size: 1rem; margin-bottom: 8px; color: var(--text-dark); }
-    .contact p { font-size: 0.85rem; color: var(--text-dark); margin-bottom: 6px; }
+.sidebar::-webkit-scrollbar {
+  display: none;              /* Chrome/Safari */
+}
 
-    /* Ring charts */
-    .rings { display: flex; justify-content: space-between; }
-    .ring { position: relative; width: 50px; height: 50px; background: conic-gradient(var(--accent) calc(var(--p)*1%), var(--sidebar-bg) 0deg); border-radius: 50%; }
-    .ring::after { content: ''; position: absolute; inset: 8px; background: var(--sidebar-bg); border-radius: 50%; }
-    .ring span { position: absolute; inset: 0; display: grid; place-items: center; font-size: 0.75rem; color: var(--text-dark); }
-    .lang-labels { display: flex; justify-content: space-between; font-size: 0.75rem; margin-top: 6px; }
+main {
+  margin-left: 300px;
+  padding: 30px 40px;
+}
 
-    /* Skill bars */
-    .skill { margin-bottom: 12px; }
-    .skill .title { display: flex; justify-content: space-between; font-size: 0.85rem; }
-    .skill .bar { height: 6px; background: var(--sidebar-bg); border-radius: 4px; overflow: hidden; margin-top: 4px; }
-    .skill .fill { height: 100%; background: var(--accent); }
+/* =========================
+   Sidebar Sections
+   ========================= */
+.sidebar section {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
 
-    /* Tools list */
-    .tools-section ul { list-style: none; }
-    .tools-section li::before { 
-      content: '\2713'; 
-      margin-right: 8px; 
-      color: var(--accent); /* Already matches skill bar color */
-    }
-    .tools-section li { margin-bottom: 6px; font-size: 0.85rem; }
+.sidebar section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
 
-    /* Hide sidebar scrollbar */
-    .sidebar {
-      /* ...existing code... */
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none; /* IE/Edge */
-    }
-    .sidebar::-webkit-scrollbar {
-      display: none; /* Chrome/Safari */
-    }
+.sidebar i {
+  color: var(--accent) !important;
+}
 
-    /* Download */
-    .download { display: inline-block; margin-top: 10px; padding: 8px 12px; background: var(--accent); color: var(--main-bg); border-radius: 4px; font-size: 0.9rem; transition: background 0.3s; }
-    .download:hover { background: var(--text-dark); }
-    .download::before { content: "\1F4BE"; margin-right: 6px; }
+.sidebar-toggle {
+  display: none;
+}
 
-    /* Welcome */
-    .welcome { padding: 20px; margin-bottom: 20px; border: 1px solid var(--border); border-radius: 6px; }
-    .welcome h1 { font-size: 2rem; color: var(--accent); margin-bottom: 8px; }
-    .welcome p { font-size: 1rem; color: var(--text-muted); }
+/* =========================
+   Profile Card
+   ========================= */
+.profile-card {
+  text-align: center;
+}
 
-    /* Navigation */
-    .nav { display: flex; gap: 20px; background: var(--nav-bg); padding: 10px; margin-bottom: 20px; border: 1px solid var(--border); border-radius: 6px; position: sticky; top: 0; z-index: 10; }
-    .nav a { font-size: 0.9rem; padding: 6px 10px; border-radius: 4px; transition: background 0.3s; }
-    .nav a:hover, .nav a.active { background: var(--nav-active); color: var(--main-bg); }
+.profile-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  margin-bottom: 12px;
+}
 
-    /* Sections */
-    section.content { padding: 20px; margin-bottom: 20px; border: 1px solid var(--border); border-radius: 6px; }
-    section.content h2 { font-size: 1.4rem; margin-bottom: 12px; color: var(--accent); }
-    section.content ul { list-style: disc inside; }
-    .item h3 { font-size: 1.1rem; }
-    .item .date { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 8px; }
+.profile-card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 4px;
+}
 
-    footer { text-align: center; padding: 20px 0; color: var(--text-muted); border-top: 1px solid var(--border); }
+.profile-card p {
+  text-align: center;
+}
 
-    /* ...existing code... */
+.profile-card p.role {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
 
-/* Responsive Layout */
+/* =========================
+   Contact
+   ========================= */
+.contact h3 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+
+.contact p {
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+/* =========================
+   Download Button
+   ========================= */
+.download {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: var(--sidebar-bg); 
+  border: 1px solid var(--border); 
+  color: var(--text-dark);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+
+.download:hover {
+  background: var(--accent);
+}
+
+.download::after {
+  content: "\1F4BE";
+  margin-left: 6px;
+}
+
+/* =========================
+   Welcome Section
+   ========================= */
+.welcome {
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.welcome h1 {
+  font-size: 2.4rem;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.welcome p {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+/* =========================
+   Navigation
+   ========================= */
+.nav {
+  gap: 12px;
+  background: var(--nav-bg);
+  margin-bottom: 18px;
+}
+
+.nav a {
+  font-size: 1rem;
+  padding: 8px 18px;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  border: 1.5px solid var(--border);
+  font-weight: 500;
+  box-shadow: none;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s;
+  white-space: nowrap;
+  display: inline-block;
+  letter-spacing: 0.01em;
+}
+
+.nav a:hover,
+.nav a.active {
+  background: var(--sidebar-bg);
+  color: var(--text-dark);
+  border-color: var(--border);
+  box-shadow: 0 2px 8px rgba(178, 142, 107, 0.10);
+}
+
+/* =========================
+   Content Sections
+   ========================= */
+section.content {
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+section.content h2 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: var(--accent);
+}
+
+section.content ul {
+  list-style: disc inside;
+  margin-bottom: 8px; 
+}
+
+#highlights ul li {
+  text-align: justify;
+}
+
+.item h3 {
+  font-size: 1.1rem;
+}
+
+.item .detail {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.item .date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+/* =========================
+   Footer
+   ========================= */
+footer {
+  text-align: center;
+  color: var(--text-muted);
+}
+
+/* =========================
+   Responsive Layout
+   ========================= */
 @media (max-width: 900px) {
   .sidebar {
     width: 220px;
@@ -142,8 +303,8 @@
     top: 16px;
     left: 16px;
     z-index: 110;
-    background: var(--accent);
-    color: #fff;
+    background: var(--border);
+    color: var(--accent);
     border: none;
     border-radius: 4px;
     padding: 8px 12px;
