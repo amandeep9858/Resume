@@ -191,7 +191,7 @@ main {
   border-radius: 6px;
   background: var(--accent);
   color: #fff;
-  border: 1.5px solid var(--border);
+  border: 1.5px solid #fff;
   font-weight: 500;
   box-shadow: none;
   transition:
@@ -303,7 +303,7 @@ footer {
     top: 16px;
     left: 16px;
     z-index: 110;
-    background: var(--border);
+    background: var(--sidebar-bg);
     color: var(--accent);
     border: none;
     border-radius: 4px;
@@ -315,4 +315,7 @@ footer {
     margin-left: 0;
     padding: 16px 4vw;
   }
+   .welcome {
+      padding: 40px;
+   }
 }
